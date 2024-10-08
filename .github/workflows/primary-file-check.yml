@@ -14,22 +14,22 @@ jobs:
 
     - name: Check if CHANGELOG is updated
       run: |
-        if ! git diff --name-only ${{ github.event.before }} ${{ github.sha }} | grep -q 'CHANGELOG.md'; then
+        if ! git diff --name-only HEAD^ HEAD | grep -q 'CHANGELOG.md'; then
           echo "::error::CHANGELOG.md not updated in this PR."
           exit 1
         fi
     
     - name: Check if image.json is updated
       run: |
-        if ! git diff --name-only ${{ github.event.before }} ${{ github.sha }} | grep -q 'image.json'; then
+        if ! git diff --name-only HEAD^ HEAD | grep -q 'image.json'; then
           echo "::error::image.json not updated in this PR."
           exit 1
         fi
 
     - name: Verify image.json version update
       run: |
-        if git diff --name-only ${{ github.event.before }} ${{ github.sha }} | grep -q 'image.json'; then
-          version_changed=$(git diff ${{ github.event.before }} ${{ github.sha }} -- image.json | grep '"version"')
+        if git diff --name-only HEAD^ HEAD | grep -q 'image.json'; then
+          version_changed=$(git diff HEAD^ HEAD -- image.json | grep '"version"')
           if [ -z "$version_changed" ]; then
             echo "::error::Version not updated in image.json."
             exit 1
