@@ -9,8 +9,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
+    - name: Checkout code with full commit history
       uses: actions/checkout@v2
+      with:
+        fetch-depth: 2  # Fetch the last 2 commits to ensure HEAD^ is available
 
     - name: Check if CHANGELOG is updated
       run: |
