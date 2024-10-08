@@ -1,0 +1,9 @@
+{
+    "kind": "container-image",
+    "deployment-name": "wordpress-test-deployment",
+    "name": "wordpress-test",
+    "registered-name": "website-pro/wordpress-test",
+    "version": "0.0.1",
+    "root-dir": null,
+    "dockerfile-path": "."
+  }
