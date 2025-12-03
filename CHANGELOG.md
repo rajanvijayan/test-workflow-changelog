@@ -1,7 +1,11 @@
 # 0.0.1
 
-- initial Version 
+- Teat file
 
-# 0.1.0
+# 0.0.2
 
-- Update yaml file to improve the woekflow
+- Teat file update
+
+# 0.0.3
+
+- Improve workflow
