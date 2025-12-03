@@ -1,7 +1,7 @@
 # 0.0.1
 
-- Teat file
+- initial Version 
 
-# 0.0.2
+# 0.1.0
 
-- Teat file update
+- Update yaml file to improve the woekflow
